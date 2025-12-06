@@ -36,7 +36,7 @@ public class ListingActivity : Activity
 
             if (!string.IsNullOrWhiteSpace(input))
             {
-            items.Add(Console.ReadLine());
+                items.Add(input);
             }
         }
 
