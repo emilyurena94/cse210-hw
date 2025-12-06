@@ -1,5 +1,4 @@
 using System;
-using System.Threading;
 
 public class BreathingActivity : Activity
 {
@@ -8,11 +7,12 @@ public class BreathingActivity : Activity
     {
     }
 
-    public void Run(int duration)
+    public void Run()
     {
         DisplayStartingMessage();
 
-        int cycles = duration / 8;
+        int cycles = _duration / 8;
+
         for (int i = 0; i < cycles; i++)
         {
             Console.WriteLine("Breathe in...");
