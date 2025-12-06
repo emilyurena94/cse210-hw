@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Threading;
 
 public class ReflectionActivity : Activity
 {
@@ -23,7 +22,7 @@ public class ReflectionActivity : Activity
     {
     }
 
-    public void Run(int duration)
+    public void Run()
     {
         DisplayStartingMessage();
 
@@ -33,7 +32,7 @@ public class ReflectionActivity : Activity
         Console.WriteLine("Think about this...");
         PauseAnimation();
 
-        int interval = duration / _questions.Count;
+        int interval = _duration / _questions.Count;
 
         foreach (var question in _questions)
         {
