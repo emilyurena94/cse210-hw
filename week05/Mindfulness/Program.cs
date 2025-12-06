@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading;
+using System;
 
 class Program
 {
@@ -19,44 +18,34 @@ class Program
             Console.WriteLine("2. Reflection");
             Console.WriteLine("3. Listing");
             Console.WriteLine("4. Exit");
-            Console.WriteLine("Choose an activity (just the number) : ");
+            Console.WriteLine("Choose an activity (just the number): ");
             string choice = Console.ReadLine();
-
-            if (choice == "4")
-            {
-                Console.WriteLine("Exiting...");
-                exit = true;
-                continue;
-            }
-
-            // Preguntar duración solo si no eligió salir
-            int duration = 0;
-            while (true)
-            {
-                Console.Write("Enter duration in seconds: ");
-                if (int.TryParse(Console.ReadLine(), out duration) && duration > 0)
-                    break;
-                Console.WriteLine("Please enter a valid positive number.");
-            }
 
             switch (choice)
             {
                 case "1":
-                    breathing.Run(duration);
+                    breathing.Run();
                     break;
                 case "2":
-                    reflection.Run(duration);
+                    reflection.Run();
                     break;
                 case "3":
                     listing.Run();
+                    break;
+                case "4":
+                    Console.WriteLine("Exiting...");
+                    exit = true;
                     break;
                 default:
                     Console.WriteLine("Invalid choice.");
                     break;
             }
 
-            Console.WriteLine("\nPress Enter to return to the menu...");
-            Console.ReadLine();
+            if (!exit)
+            {
+                Console.WriteLine("\nPress Enter to return to the menu...");
+                Console.ReadLine();
+            }
         }
     }
 }
