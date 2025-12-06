@@ -20,7 +20,6 @@ public class Activity
         Console.WriteLine(_description);
         Console.Write("\nEnter duration in seconds: ");
 
-        // Validación de entrada
         while (!int.TryParse(Console.ReadLine(), out _duration) || _duration <= 0)
         {
             Console.Write("Please enter a valid positive number: ");
